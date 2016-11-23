@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require File.expand_path('../../connect_db.rb', __FILE__)
+require File.expand_path('../../spec/models/user.rb', __FILE__)
+require 'active_record/pg_generate_series'
+
+require 'pry'
+
+Pry.start

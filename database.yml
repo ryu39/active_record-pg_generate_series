@@ -1,0 +1,8 @@
+db:
+  adapter: postgresql
+  encoding: utf8
+  database: pg_generate_series
+  pool: 5
+  username: postgres
+  password: postgres
+  host:     "<%= /\Atcp:\/\/([0-9.]+):/.match(ENV['DOCKER_HOST']) ? $1 : 'localhost' %>"
