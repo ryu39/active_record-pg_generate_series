@@ -1,5 +1,7 @@
 # ActiveRecord::PgGenerateSeries
 
+[![Build Status](https://travis-ci.org/ryu39/active_record-pg_generate_series.svg?branch=master)](https://travis-ci.org/ryu39/active_record-pg_generate_series)
+
 This gem adds a feature which inserts records using PostgreSQL generate_series function to ActiveRecord.
 
 Insertion using generate_series funciton is very fast.
