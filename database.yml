@@ -3,6 +3,6 @@ db:
   encoding: utf8
   database: pg_generate_series
   pool: 5
-  username: postgres
-  password: postgres
-  host:     "<%= /\Atcp:\/\/([0-9.]+):/.match(ENV['DOCKER_HOST']) ? $1 : 'localhost' %>"
+  username: "<%= ENV.fetch('POSTGRES_USER_NAME', 'postgres') %>"
+  password: "<%= ENV.fetch('POSTGRES_PASSWORD', 'postgres') %>"
+  host:     "<%= ENV.fetch('POSTGRES_HOST', /\Atcp:\/\/([0-9.]+):/.match(ENV['DOCKER_HOST']) ? $1 : 'localhost') %>"
