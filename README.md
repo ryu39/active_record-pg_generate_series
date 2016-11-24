@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/ryu39/active_record-pg_generate_series.svg?branch=master)](https://travis-ci.org/ryu39/active_record-pg_generate_series)
 
-This gem adds a feature which inserts records using PostgreSQL generate_series function to ActiveRecord.
+This gem adds a feature which inserts records using PostgreSQL [GENERATE_SERIES](https://www.postgresql.org/docs/current/static/functions-srf.html) function to ActiveRecord.
 
-Insertion using generate_series funciton is very fast.
+Insertion using GENERATE_SERIES function is very fast.
 It is about 300-400 times faster than iteration of ActiveRecord::Base#save and 30-40 times faster than bulk insert. (In authors env)
 
 ## Benchmark
@@ -115,7 +115,7 @@ p AdminUser.all
 
 #### Step
 
-You can change step value of GENERATE_SERISE function (Default: 1) with `step` option.
+You can change step value of GENERATE_SERIES function (Default: 1) with `step` option.
 
 ```ruby
 User.insert_using_generate_series(1, 10, step: 5) do |sql|
@@ -133,7 +133,7 @@ p User.all
 
 #### Sequence name
 
-Also, you can change sequence name of GENERATE_SERISE function (Default: `seq`) with `seq_name` option.
+Also, you can change sequence name of GENERATE_SERIES function (Default: `seq`) with `seq_name` option.
 
 ```ruby
 User.insert_using_generate_series(1, 10, seq_name: 'new_seq') do |sql|
