@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/ryu39/active_record-pg_generate_series.svg?branch=master)](https://travis-ci.org/ryu39/active_record-pg_generate_series)
 
-This gem adds a feature which inserts records using PostgreSQL generate_series function to ActiveRecord.
+This gem adds a feature which inserts records using PostgreSQL [GENERATE_SERIES](https://www.postgresql.org/docs/current/static/functions-srf.html) function to ActiveRecord.
 
-Insertion using generate_series function is very fast.
+Insertion using GENERATE_SERIES function is very fast.
 It is about 300-400 times faster than iteration of ActiveRecord::Base#save and 30-40 times faster than bulk insert. (In authors env)
 
 ## Benchmark
