@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require File.expand_path('../../connect_db.rb', __FILE__)
 require File.expand_path('../models/user.rb', __FILE__)
 
