@@ -1,9 +1,36 @@
-sudo: false
 language: ruby
+
 rvm:
-  - 2.3.1
+  - 2.4.0
+  - 2.3.3
+  - 2.2.6
+  - 2.1.10
+  - 2.0.0
+
+gemfile:
+  - gemfiles/active_record_50.gemfile
+  - gemfiles/active_record_42.gemfile
+  - gemfiles/active_record_32.gemfile
+
+sudo: false
 services:
   - postgresql
-before_install: gem install bundler -v 1.13.6
-before_script:
-  - ruby bin/db_setup.rb
+
+before_install: gem update bundler --no-document
+before_script: 'bundle exec ruby bin/db_setup.rb'
+script: 'bundle exec rake spec'
+
+cache: bundler
+
+matrix:
+  exclude:
+    - rvm: 2.0.0
+      gemfile: gemfiles/active_record_50.gemfile
+    - rvm: 2.1.10
+      gemfile: gemfiles/active_record_50.gemfile
+    - rvm: 2.3.3
+      gemfile: gemfiles/active_record_32.gemfile
+    - rvm: 2.4.0
+      gemfile: gemfiles/active_record_32.gemfile
+    - rvm: 2.4.0
+      gemfile: gemfiles/active_record_42.gemfile
