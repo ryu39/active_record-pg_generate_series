@@ -3,6 +3,7 @@ require 'forwardable'
 
 module ActiveRecord
   module PgGenerateSeries
+    # SQL builder using PostgreSQL GENERATE_SERIES function.
     class SqlBuilder
       extend Forwardable
       def_delegators :@ar_class, :connection, :sanitize, :quoted_table_name
@@ -36,6 +37,7 @@ EOS
 
       private
 
+      # no doc
       class Raw
         attr_reader :str
 
