@@ -3,6 +3,7 @@ require 'active_record/pg_generate_series/sql_builder'
 
 module ActiveRecord
   module PgGenerateSeries
+    # A ActiveRecord::Base extension module to use PostgreSQL GENERATE_SERIES function.
     module Extension
       # Execute INSERT SQL using GENERATE_SERIES function
       #

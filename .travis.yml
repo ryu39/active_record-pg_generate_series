@@ -16,9 +16,12 @@ sudo: false
 services:
   - postgresql
 
-before_install: gem update bundler --no-document
-before_script: 'bundle exec ruby bin/db_setup.rb'
-script: 'bundle exec rake spec'
+before_install:
+  - 'gem update bundler --no-document'
+before_script:
+ - 'bundle exec ruby bin/db_setup.rb'
+script:
+  - 'bundle exec rspec'
 
 cache: bundler
 

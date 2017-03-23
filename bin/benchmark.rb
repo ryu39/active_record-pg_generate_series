@@ -22,9 +22,7 @@ Benchmark.bm(36) do |x|
   end
 
   x.report('bulk insert(activerecord-import)') do
-    users = RECORD_NUM.times.map do |i|
-      User.new(name: "name#{i + 1}", age: i + 1, birth_date: Date.today + i + 1)
-    end
+    users = Array.new(RECORD_NUM) { |i| User.new(name: "name#{i + 1}", age: i + 1, birth_date: Date.today + i + 1) }
     User.import(users)
   end
 

@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require "spec_helper"
+require 'spec_helper'
 
 describe ActiveRecord::PgGenerateSeries::Extension do
   # rollback after each examples
@@ -15,7 +15,7 @@ describe ActiveRecord::PgGenerateSeries::Extension do
     let(:last) { 3 }
     let(:options) { {} }
     let(:block) do
-      Proc.new do |sql|
+      proc do |sql|
         sql.name = 'name'
         sql.age = 16
         sql.birth_date = Date.new(2000, 1, 1)
@@ -41,7 +41,7 @@ describe ActiveRecord::PgGenerateSeries::Extension do
 
     context 'when raw sql is used' do
       let(:block) do
-        Proc.new do |sql|
+        proc do |sql|
           sql.name = raw("'name' || seq")
           sql.age = raw('seq * 2')
           sql.birth_date = raw("'2000-01-01'::date + seq")
@@ -74,7 +74,7 @@ describe ActiveRecord::PgGenerateSeries::Extension do
     context 'with :seq_name option' do
       let(:options) { { seq_name: :new_seq } }
       let(:block) do
-        Proc.new do |sql|
+        proc do |sql|
           sql.name = 'name'
           sql.birth_date = Date.new(2000, 1, 1)
           sql.disabled = true
