@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['ryu39']
   spec.email         = ['dev.ryu39@gmail.com']
 
-  spec.summary       = %q{Add a feature which inserts records using PostgreSQL generate_series function to ActiveRecord}
+  spec.summary       = 'Add a feature which inserts records using PostgreSQL generate_series function to ActiveRecord'
   spec.description   = <<EOS.gsub("\n", ' ')
 This gem adds a feature which inserts records using PostgreSQL generate_series function to ActiveRecord.
 Insertion using generate_series function is very fast, so it is useful
