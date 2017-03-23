@@ -27,7 +27,7 @@ module ActiveRecord
 INSERT INTO
   #{quoted_table_name} (#{@select_items.keys.map { |col| connection.quote_column_name(col) }.join(',')})
 SELECT
-  #{@select_items.map { |_, val| "#{val.is_a?(Raw) ? val.str : sanitize(val)}" }.join(",\n  ")}
+  #{@select_items.values.map { |val| val.is_a?(Raw) ? val.str : sanitize(val) }.join(",\n  ")}
 FROM
   GENERATE_SERIES(#{@first.to_i}, #{@last.to_i}, #{@step.to_i}) AS #{connection.quote_column_name(@seq_name)}
 ;
