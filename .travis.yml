@@ -22,6 +22,8 @@ before_script:
  - 'bundle exec ruby bin/db_setup.rb'
 script:
   - 'bundle exec rspec'
+after_success:
+  - 'bundle exec codeclimate-test-reporter'
 
 cache: bundler
 

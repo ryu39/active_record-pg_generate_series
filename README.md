@@ -1,6 +1,10 @@
 # ActiveRecord::PgGenerateSeries
 
+[![Gem Version](https://badge.fury.io/rb/active_record-pg_generate_series.svg)](https://badge.fury.io/rb/active_record-pg_generate_series)
 [![Build Status](https://travis-ci.org/ryu39/active_record-pg_generate_series.svg?branch=master)](https://travis-ci.org/ryu39/active_record-pg_generate_series)
+[![Code Climate](https://codeclimate.com/github/ryu39/active_record-pg_generate_series/badges/gpa.svg)](https://codeclimate.com/github/ryu39/active_record-pg_generate_series)
+[![Test Coverage](https://codeclimate.com/github/ryu39/active_record-pg_generate_series/badges/coverage.svg)](https://codeclimate.com/github/ryu39/active_record-pg_generate_series/coverage)
+[![Issue Count](https://codeclimate.com/github/ryu39/active_record-pg_generate_series/badges/issue_count.svg)](https://codeclimate.com/github/ryu39/active_record-pg_generate_series)
 
 This gem adds a feature which inserts records using PostgreSQL [GENERATE_SERIES](https://www.postgresql.org/docs/current/static/functions-srf.html) function to ActiveRecord.
 
