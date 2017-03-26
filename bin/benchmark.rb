@@ -10,19 +10,23 @@ require 'benchmark'
 
 RECORD_NUM = 10_000
 
+def build_user(num)
+  User.new(name: "name#{num + 1}", age: num + 1, birth_date: Date.today + num + 1)
+end
+
 User.delete_all
 
 GC.disable
 Benchmark.bm(36) do |x|
   x.report('iteration of ActiveRecord::Base#save') do
     RECORD_NUM.times do |i|
-      user = User.new(name: "name#{i + 1}", age: i + 1, birth_date: Date.today + i + 1)
+      user = build_user(i)
       user.save(validate: false)
     end
   end
 
   x.report('bulk insert(activerecord-import)') do
-    users = Array.new(RECORD_NUM) { |i| User.new(name: "name#{i + 1}", age: i + 1, birth_date: Date.today + i + 1) }
+    users = Array.new(RECORD_NUM) { |i| build_user(i) }
     User.import(users)
   end
 
