@@ -55,6 +55,9 @@ Style/Encoding:
 Style/IfUnlessModifier:
   Enabled: false
 
+Style/IndentHeredoc:
+  Enabled: false
+
 Style/MultilineMethodCallIndentation:
   Enabled: false
 
