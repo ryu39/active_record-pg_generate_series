@@ -97,7 +97,7 @@ describe ActiveRecord::PgGenerateSeries::Extension do
       let(:options) { { debug: true } }
 
       it 'does not create records' do
-        expect { subject }.not_to change { User.count }
+        expect { subject }.not_to(change { User.count })
       end
     end
 
