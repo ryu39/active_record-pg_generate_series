@@ -6,7 +6,7 @@ module ActiveRecord
     # SQL builder using PostgreSQL GENERATE_SERIES function.
     class SqlBuilder
       extend Forwardable
-      def_delegators :@ar_class, :connection, :sanitize, :quoted_table_name
+      def_delegators :@ar_class, :connection, :quoted_table_name
 
       def initialize(ar_class, first, last, step, seq_name)
         @ar_class = ar_class
@@ -28,7 +28,7 @@ module ActiveRecord
 INSERT INTO
   #{quoted_table_name} (#{@select_items.keys.map { |col| connection.quote_column_name(col) }.join(',')})
 SELECT
-  #{@select_items.values.map { |val| val.is_a?(Raw) ? val.str : sanitize(val) }.join(",\n  ")}
+  #{@select_items.values.map { |val| val.is_a?(Raw) ? val.str : connection.quote(val) }.join(",\n  ")}
 FROM
   GENERATE_SERIES(#{@first.to_i}, #{@last.to_i}, #{@step.to_i}) AS #{connection.quote_column_name(@seq_name)}
 ;
