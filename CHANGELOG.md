@@ -3,6 +3,7 @@
 ## (WIP)v0.1.3
 
 * Fix undefined method 'sanitize' error in Rails 5.1.0. (#7)
+* Remove unnecessary files from gem. (#8)
 
 ## v0.1.2
 

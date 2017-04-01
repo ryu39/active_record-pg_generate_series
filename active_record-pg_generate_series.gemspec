@@ -17,9 +17,7 @@ EOS
   spec.homepage      = 'https://github.com/ryu39/active_record-pg_generate_series'
   spec.license       = 'MIT'
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
+  spec.files         = %w(LICENSE.txt) + Dir['lib/**/*.rb']
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
