@@ -6,4 +6,6 @@ inherit_gem:
     - 'config/rspec.yml'
 
 AllCops:
+  Exclude:
+    - 'gemfiles/**/*'
   TargetRubyVersion: 2.0
