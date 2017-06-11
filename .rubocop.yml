@@ -1,66 +1,9 @@
+require: 'rubocop-rspec'
+
+inherit_gem:
+  ryu39cop:
+    - 'config/rubocop.yml'
+    - 'config/rspec.yml'
+
 AllCops:
-  DisplayCopNames: true
-
-##################### Linting #############################
-
-##################### Metrics #############################
-
-Metrics/AbcSize:
-  Max: 20
-
-Metrics/BlockLength:
-  Exclude:
-    - 'spec/**/*'
-    - '*.gemspec'
-
-Metrics/LineLength:
-  Max: 120
-
-Metrics/MethodLength:
-  Max: 30
-
-Metrics/ParameterLists:
-  CountKeywordArgs: false
-
-##################### Performance #############################
-
-Performance/FlatMap:
-  EnabledForFlattenWithoutParams: false
-
-Performance/RedundantBlockCall:
-  Enabled: false
-
-##################### Rails ##################################
-
-Rails/SafeNavigation:
-  ConvertTry: true
-
-Rails/SaveBang:
-  Enabled: true
-
-##################### Security ##################################
-
-Security/YAMLLoad:
-  Enabled: false
-
-##################### Style #################################
-
-Style/AutoResourceCleanup:
-  Enabled: true
-
-Style/Encoding:
-  Enabled: true
-  EnforcedStyle: never
-
-Style/IfUnlessModifier:
-  Enabled: false
-
-Style/IndentHeredoc:
-  Enabled: false
-
-Style/MultilineMethodCallIndentation:
-  Enabled: false
-
-##################### Bundler #################################
-Bundler/OrderedGems:
-  Enabled: false
+  TargetRubyVersion: 2.0

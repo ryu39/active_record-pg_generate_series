@@ -8,7 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['ryu39']
   spec.email         = ['dev.ryu39@gmail.com']
 
-  spec.summary       = 'Add a feature which inserts records using PostgreSQL generate_series function to ActiveRecord'
+  spec.summary       = 'Add a feature which inserts records using PostgreSQL generate_series ' \
+                       'function to ActiveRecord'
   spec.description   = <<EOS.tr("\n", ' ')
 This gem adds a feature which inserts records using PostgreSQL generate_series function to ActiveRecord.
 Insertion using generate_series function is very fast, so it is useful
@@ -27,7 +28,7 @@ EOS
   spec.add_development_dependency 'bundler', '~> 1.13'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '>= 3.5'
-  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'ryu39cop', '~> 0.49.1.0'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'pg'
   spec.add_development_dependency 'activerecord-import'
