@@ -7,8 +7,6 @@ engines:
       - ruby
   fixme:
     enabled: true
-  rubocop:
-    enabled: true
 ratings:
   paths:
   - "**.rb"

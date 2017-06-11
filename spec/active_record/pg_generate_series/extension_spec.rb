@@ -4,7 +4,7 @@ require 'spec_helper'
 
 describe ActiveRecord::PgGenerateSeries::Extension do
   # rollback after each examples
-  around(:example) do |example|
+  around do |example|
     ActiveRecord::Base.transaction do
       example.call
       raise ActiveRecord::Rollback
@@ -12,6 +12,8 @@ describe ActiveRecord::PgGenerateSeries::Extension do
   end
 
   describe '#insert_using_generate_series' do
+    subject { User.insert_using_generate_series(first, last, options, &block) }
+
     let(:first) { 1 }
     let(:last) { 3 }
     let(:options) { {} }
@@ -23,7 +25,6 @@ describe ActiveRecord::PgGenerateSeries::Extension do
         sql.disabled = true
       end
     end
-    subject { User.insert_using_generate_series(first, last, options, &block) }
 
     it 'creates generate_series length User records' do
       expect { subject }.to change { User.count }.by(3)

@@ -11,7 +11,8 @@ module ActiveRecord
       # @param [Integer] first Required, first value of GENERATE_SERIES.
       # @param [Integer] last Required, last value of GENERATE SERIES.
       # @param [Integer] step Optional, step value of GENERATE_SERIES, default is 1.
-      # @param [String, Symbol] seq_name Optional, name of GENERATE_SERIES sequence, default is :seq.
+      # @param [String, Symbol] seq_name Optional, name of GENERATE_SERIES sequence,
+      #   default is :seq.
       # @param [boolean] debug Optional, if true then sql is returned, not executed.
       # @param [Proc] block Required, block for setting selected columns.
       def insert_using_generate_series(first, last, step: 1, seq_name: :seq, debug: false, &block)
