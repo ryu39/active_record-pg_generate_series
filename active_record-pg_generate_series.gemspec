@@ -25,8 +25,8 @@ EOS
 
   spec.add_runtime_dependency 'activerecord'
 
-  spec.add_development_dependency 'bundler', '~> 1.13'
-  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'bundler'
+  spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec', '>= 3.5'
   spec.add_development_dependency 'ryu39cop', '~> 0.49.1.0'
   spec.add_development_dependency 'pry'
