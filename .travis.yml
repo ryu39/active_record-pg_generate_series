@@ -23,6 +23,7 @@ before_install:
 before_script:
   - 'bundle exec ruby bin/db_setup.rb'
 script:
+  - 'bundle exec rubocop'
   - 'bundle exec rspec'
 after_success:
   - 'bundle exec codeclimate-test-reporter'
