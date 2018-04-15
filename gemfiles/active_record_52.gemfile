@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'activerecord', '~> 5.0.7', require: 'active_record'
+gem 'activerecord', '~> 5.2.0', require: 'active_record'
 group :test do
   gem 'simplecov'
   gem 'codeclimate-test-reporter', '~> 1.0.0'
